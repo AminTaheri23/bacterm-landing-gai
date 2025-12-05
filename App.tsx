@@ -6,7 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { HeroScene, QuantumComputerScene } from './components/QuantumScene';
 import { SurfaceCodeDiagram, TransformerDecoderDiagram, PerformanceMetricDiagram } from './components/Diagrams';
-import { ArrowDown, Menu, X, BookOpen, Dna, Microscope, Cpu } from 'lucide-react';
+import { ArrowDown, Menu, X, Dna, Cpu } from 'lucide-react';
 
 const AuthorCard = ({ name, role, delay }: { name: string, role: string, delay: string }) => {
   return (

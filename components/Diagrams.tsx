@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Dna, Activity, BarChart2, Layers, GitMerge } from 'lucide-react';
+import { Dna, BarChart2, GitMerge } from 'lucide-react';
 
 // --- TERMINATOR STRUCTURE DIAGRAM ---
 export const SurfaceCodeDiagram: React.FC = () => {
@@ -19,7 +19,7 @@ export const SurfaceCodeDiagram: React.FC = () => {
   // Poly-U: indices 22-28
   const sequence = "ATTCGCCGGCAATTTGGCCGCTTTTTTTAT";
   
-  const getBaseColor = (index: number, base: string) => {
+  const getBaseColor = (index: number) => {
       // GC Rich Stem
       if ((index >= 4 && index <= 9) || (index >= 15 && index <= 20)) {
           return "bg-emerald-100 text-emerald-800 border-emerald-300 font-bold";
@@ -51,7 +51,7 @@ export const SurfaceCodeDiagram: React.FC = () => {
           {sequence.split('').map((base, i) => (
               <div key={i} className="relative group">
                   <motion.div
-                    className={`w-6 h-8 md:w-8 md:h-10 border rounded flex items-center justify-center text-xs md:text-sm cursor-default ${getBaseColor(i, base)}`}
+                    className={`w-6 h-8 md:w-8 md:h-10 border rounded flex items-center justify-center text-xs md:text-sm cursor-default ${getBaseColor(i)}`}
                     whileHover={{ scale: 1.2, zIndex: 10 }}
                     onHoverStart={() => setHoveredBase(i)}
                     onHoverEnd={() => setHoveredBase(null)}
