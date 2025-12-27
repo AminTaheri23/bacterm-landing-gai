@@ -14,10 +14,13 @@ const IntroductionSection: React.FC = () => {
             <span className="text-5xl float-left mr-3 mt-[-8px] font-serif text-science-teal">T</span>ranscription is the process of synthesizing RNA from a DNA template. It begins at the promoter and ends at the <strong>Terminator</strong>, a specific DNA segment that signals the RNA polymerase to stop.
           </p>
           <p>
-            Accurately identifying these terminators is crucial for understanding operon structures and gene regulation. However, existing computational tools are often specialized for specific bacteria (like <em>E. coli</em>) or specific terminator types (Intrinsic vs Factor-Dependent), lacking a truly general solution.
+            Accurately identifying these terminators is crucial for understanding operon structures and gene regulation. However, existing computational tools are often specialized for specific bacteria (like <em>E. coli</em>) or specific terminator types (Intrinsic vs Factor-Dependent), lacking a truly general solution. Tools such as TermNN, RhoTermPredict, TransTermHP, and iTerm-PseKNC focus on limited species or terminator types.
           </p>
           <p>
-            <strong>BacTermFinder</strong> bridges this gap. By training on over 41,000 terminators from 22 diverse bacterial species, it provides a general-purpose model capable of detecting multiple terminator types with high accuracy.
+            Recent advances in high-throughput sequencing technologies have enabled genome-wide identification of transcription termination sites (TTSs). BacTermFinder leverages data from multiple RNA-seq technologies including <strong>Term-seq, SEnd-seq, SMRT-cappable, Rend-seq, RNATag-seq, and dRNA-seq</strong>.
+          </p>
+          <p>
+            <strong>BacTermFinder</strong> bridges this gap. By training on over 41,000 terminators from 22 diverse bacterial species with GC content ranging from 28% to 71%, it provides a general-purpose model capable of detecting multiple terminator types with high accuracy.
           </p>
         </div>
       </div>

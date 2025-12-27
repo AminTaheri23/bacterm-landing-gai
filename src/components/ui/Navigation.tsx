@@ -22,9 +22,19 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled, menuOpen, setMenuOpen
           
           <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-stone-600">
             <a href="#introduction" onClick={onScrollToSection('introduction')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Background</a>
+            <a href="#structure" onClick={onScrollToSection('structure')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Structure</a>
             <a href="#methods" onClick={onScrollToSection('methods')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">The Ensemble</a>
             <a href="#results" onClick={onScrollToSection('results')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Results</a>
+            <a href="#impact" onClick={onScrollToSection('impact')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Impact</a>
             <a href="#authors" onClick={onScrollToSection('authors')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Authors</a>
+            <a 
+              href="https://academic.oup.com/nargab/article/7/1/lqaf016/8063809" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="px-5 py-2 bg-stone-800 text-white rounded-full hover:bg-stone-700 transition-colors shadow-sm cursor-pointer"
+            >
+              Read Paper
+            </a>
             <a 
               href="https://github.com/BioinformaticsLabAtMUN/BacTermFinder" 
               target="_blank" 
@@ -44,9 +54,20 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled, menuOpen, setMenuOpen
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8 text-xl font-serif animate-fade-in">
             <a href="#introduction" onClick={onScrollToSection('introduction')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Background</a>
+            <a href="#structure" onClick={onScrollToSection('structure')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Structure</a>
             <a href="#methods" onClick={onScrollToSection('methods')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">The Ensemble</a>
             <a href="#results" onClick={onScrollToSection('results')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Results</a>
+            <a href="#impact" onClick={onScrollToSection('impact')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Impact</a>
             <a href="#authors" onClick={onScrollToSection('authors')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Authors</a>
+            <a 
+              href="https://academic.oup.com/nargab/article/7/1/lqaf016/8063809" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              onClick={() => setMenuOpen(false)} 
+              className="px-6 py-3 bg-stone-800 text-white rounded-full shadow-lg cursor-pointer"
+            >
+              Read Paper
+            </a>
             <a 
               href="https://github.com/BioinformaticsLabAtMUN/BacTermFinder" 
               target="_blank" 

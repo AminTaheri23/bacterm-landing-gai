@@ -15,7 +15,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection }) => {
 
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="inline-block mb-4 px-3 py-1 border border-science-teal text-science-teal text-xs tracking-[0.2em] uppercase font-bold rounded-full backdrop-blur-sm bg-white/30">
-          Computational Biology • 2024
+          Computational Biology • 2025
         </div>
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium leading-tight md:leading-[1.1] mb-8 text-stone-900 drop-shadow-sm">
           BacTermFinder <br/><span className="italic font-normal text-stone-600 text-3xl md:text-4xl block mt-4">General Bacterial Terminator Prediction</span>

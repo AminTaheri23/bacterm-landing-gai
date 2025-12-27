@@ -170,25 +170,24 @@ export const TransformerDecoderDiagram: React.FC = () => {
 
 // --- PERFORMANCE CHART ---
 export const PerformanceMetricDiagram: React.FC = () => {
-    // Comparing Recall on Independent Validation Data (Table 8 summary)
-    // Values roughly based on: BacTermFinder ~0.57, TermNN ~0.46, TransTermHP ~0.25
-    
+    // Comparing Recall on Independent Validation Data (Table 8 summary from paper)
     const [view, setView] = useState<'overall' | 'species'>('overall');
 
     const data = {
         overall: [
             { tool: "BacTermFinder", val: 0.57, color: "bg-science-teal" },
             { tool: "TermNN", val: 0.46, color: "bg-stone-400" },
+            { tool: "TransTermHP", val: 0.25, color: "bg-stone-300" },
             { tool: "RhoTermPredict", val: 0.15, color: "bg-stone-300" },
-            { tool: "TransTermHP", val: 0.25, color: "bg-stone-300" }
+            { tool: "ITerm-PseKNC", val: 0.13, color: "bg-stone-300" }
         ],
         species: [
-            // Example for S. gardneri (high GC)
-            { tool: "BacTermFinder", val: 0.60, color: "bg-science-teal" },
-            { tool: "TermNN", val: 0.36, color: "bg-stone-400" },
-            // Example for S. agalactiae (low GC)
-            { tool: "BacTermFinder (Low GC)", val: 0.82, color: "bg-emerald-500" },
-            { tool: "TermNN (Low GC)", val: 0.77, color: "bg-stone-400" },
+            // Streptococcus agalactiae (low GC: 35.1%)
+            { tool: "BacTermFinder", val: 0.82, color: "bg-science-teal" },
+            { tool: "TermNN", val: 0.77, color: "bg-stone-400" },
+            { tool: "TransTermHP", val: 0.56, color: "bg-stone-300" },
+            { tool: "RhoTermPredict", val: 0.02, color: "bg-stone-300" },
+            { tool: "ITerm-PseKNC", val: 0.24, color: "bg-stone-300" }
         ]
     };
 
@@ -199,7 +198,10 @@ export const PerformanceMetricDiagram: React.FC = () => {
             <div className="flex-1 min-w-[240px]">
                 <h3 className="font-serif text-xl mb-2 text-science-teal">Benchmarking Recall</h3>
                 <p className="text-stone-500 text-sm mb-6 leading-relaxed">
-                    BacTermFinder achieves higher recall rates compared to existing tools like TermNN and TransTermHP, while maintaining a low false positive rate.
+                    {view === 'overall' 
+                        ? "BacTermFinder achieves the highest mean recall (0.57) across five bacterial species compared to TermNN, TransTermHP, RhoTermPredict, and ITerm-PseKNC."
+                        : "BacTermFinder maintains superior performance across species with different GC content, as shown here for Streptococcus agalactiae (low GC: 35.1%)."
+                    }
                 </p>
                 
                 <div className="flex gap-2 mb-4">
@@ -207,19 +209,19 @@ export const PerformanceMetricDiagram: React.FC = () => {
                         onClick={() => setView('overall')}
                         className={`px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full transition-colors ${view === 'overall' ? 'bg-science-teal text-white' : 'bg-stone-100 text-stone-500'}`}
                     >
-                        Overall Mean Recall
+                        Overall Mean
                     </button>
                     <button 
                          onClick={() => setView('species')}
                         className={`px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full transition-colors ${view === 'species' ? 'bg-science-teal text-white' : 'bg-stone-100 text-stone-500'}`}
                     >
-                        Specific Species
+                        S. agalactiae
                     </button>
                 </div>
 
                 <div className="mt-2 font-mono text-[10px] text-stone-400 flex items-center gap-2">
                     <BarChart2 size={12} /> 
-                    <span>RECALL @ VARIOUS OVERLAP THRESHOLDS</span>
+                    <span>AVERAGE RECALL ± STD OVER 10 OVERLAP THRESHOLDS</span>
                 </div>
             </div>
             

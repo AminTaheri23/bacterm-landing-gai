@@ -13,10 +13,13 @@ const StructureSection: React.FC = () => {
                     </div>
                     <h2 className="font-serif text-4xl md:text-5xl mb-6 text-stone-900">The Signal in the Sequence</h2>
                     <p className="text-lg text-stone-600 mb-6 leading-relaxed">
-                       Intrinsic terminators are characterized by a distinct "hairpin" structure in the RNA transcript. This forms due to a GC-rich region in the DNA that binds to itself, followed by a sequence of Uracils (Poly-U).
+                       <strong>Intrinsic terminators</strong> are characterized by a distinct "hairpin" structure in the RNA transcript. This forms due to a GC-rich region (cytosine and guanine nucleotides) that binds with itself, followed by a poly-thymine (poly-U in RNA) sequence. The weak base pairing between adenines in the DNA template and uridines in the RNA transcript allows the transcript to detach, terminating transcription.
                     </p>
                     <p className="text-lg text-stone-600 mb-6 leading-relaxed">
-                        Factor-dependent terminators are more complex and require proteins like Rho to halt transcription. BacTermFinder is designed to recognize the sequence motifs underlying both mechanisms.
+                        <strong>Factor-dependent terminators</strong> are more complex, requiring both cis-acting RNA elements and proteins like Rho to halt transcription. The Rho utilization (rut) site is typically 60–90 nucleotides upstream of the terminator. Rho mediates termination through three distinct mechanisms, making these terminators more challenging to predict.
+                    </p>
+                    <p className="text-lg text-stone-600 leading-relaxed">
+                        BacTermFinder is designed to recognize the sequence motifs and cis-acting elements underlying both mechanisms. It can identify both intrinsic and factor-dependent terminators across diverse bacterial species.
                     </p>
                 </div>
                 <div>
