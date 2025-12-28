@@ -28,14 +28,49 @@ export default function BlogPost() {
       <Helmet>
         <title>{post.meta.title} | BactermFinder</title>
         <meta name="description" content={post.meta.description} />
+        <link rel="canonical" href={`https://bactermfinder.netlify.app/blog/${post.slug}`} />
         <meta property="og:title" content={post.meta.title} />
         <meta property="og:description" content={post.meta.description} />
         <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://bactermfinder.netlify.app/blog/${post.slug}`} />
         <meta property="article:published_time" content={post.meta.date} />
         {post.meta.tags &&
           post.meta.tags.map((tag) => (
             <meta key={tag} property="article:tag" content={tag} />
           ))}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.meta.title} />
+        <meta name="twitter:description" content={post.meta.description} />
+        
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": post.meta.title,
+          "description": post.meta.description,
+          "url": `https://bactermfinder.netlify.app/blog/${post.slug}`,
+          "datePublished": post.meta.date,
+          "dateModified": post.meta.date,
+          "author": {
+            "@type": "Organization",
+            "name": "BacTermFinder",
+            "url": "https://bactermfinder.netlify.app"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "BacTermFinder",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://bactermfinder.netlify.app/logo.png"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://bactermfinder.netlify.app/blog/${post.slug}`
+          },
+          "keywords": post.meta.tags ? post.meta.tags.join(", ") : ""
+        })}
+        </script>
       </Helmet>
 
       <article className="max-w-4xl mx-auto px-6">

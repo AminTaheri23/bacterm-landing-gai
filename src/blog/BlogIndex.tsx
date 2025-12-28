@@ -5,11 +5,16 @@ export default function BlogIndex() {
   return (
     <div className="min-h-screen bg-[#F9F9F9] text-stone-800 py-16">
       <Helmet>
-        <title>Blog | BactermFinder</title>
-        <meta name="description" content="Latest insights and updates about BactermFinder" />
-        <meta property="og:title" content="Blog | BactermFinder" />
-        <meta property="og:description" content="Latest insights and updates about BactermFinder" />
+        <title>Blog | BacTermFinder</title>
+        <meta name="description" content="Latest insights and updates about BactermFinder's bacterial terminator detection technology" />
+        <link rel="canonical" href="https://bactermfinder.netlify.app/blog" />
+        <meta property="og:title" content="Blog | BacTermFinder" />
+        <meta property="og:description" content="Latest insights and updates about BactermFinder's bacterial terminator detection technology" />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bactermfinder.netlify.app/blog" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog | BacTermFinder" />
+        <meta name="twitter:description" content="Latest insights and updates about BactermFinder's bacterial terminator detection technology" />
       </Helmet>
 
       <div className="max-w-4xl mx-auto px-6">

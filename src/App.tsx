@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from '@dr.pogodin/react-helmet';
 import Navigation from './components/ui/Navigation';
 import Footer from './components/ui/Footer';
 import HeroSection from './components/sections/HeroSection';
@@ -31,7 +32,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F9F9F9] text-stone-800 selection:bg-science-teal selection:text-white">
+    <>
+      <Helmet>
+        <link rel="canonical" href="https://bactermfinder.netlify.app/" />
+      </Helmet>
+      <div className="min-h-screen bg-[#F9F9F9] text-stone-800 selection:bg-science-teal selection:text-white">
       <Navigation 
         scrolled={scrolled} 
         menuOpen={menuOpen} 
@@ -52,6 +57,7 @@ const App: React.FC = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 
