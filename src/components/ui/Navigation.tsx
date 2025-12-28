@@ -21,6 +21,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled, menuOpen, setMenuOpen
           </div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-stone-600">
+            <a href="/blog" className="hover:text-science-teal transition-colors cursor-pointer uppercase">Blog</a>
             <a href="#introduction" onClick={onScrollToSection('introduction')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Background</a>
             <a href="#structure" onClick={onScrollToSection('structure')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Structure</a>
             <a href="#methods" onClick={onScrollToSection('methods')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">The Ensemble</a>
@@ -53,6 +54,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled, menuOpen, setMenuOpen
 
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8 text-xl font-serif animate-fade-in">
+            <a href="/blog" onClick={() => setMenuOpen(false)} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Blog</a>
             <a href="#introduction" onClick={onScrollToSection('introduction')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Background</a>
             <a href="#structure" onClick={onScrollToSection('structure')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">Structure</a>
             <a href="#methods" onClick={onScrollToSection('methods')} className="hover:text-science-teal transition-colors cursor-pointer uppercase">The Ensemble</a>
