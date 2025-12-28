@@ -9,8 +9,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import './index.css';
-import App from './App';
 
+const App = lazy(() => import('./App'));
 const BlogIndex = lazy(() => import('./blog/BlogIndex'));
 const BlogPost = lazy(() => import('./blog/BlogPost'));
 

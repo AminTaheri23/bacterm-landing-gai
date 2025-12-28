@@ -6,5 +6,5 @@ interface ImportMetaEnv {
 
 interface ImportMeta {
   readonly env: ImportMetaEnv;
-  glob: any;
+  glob: Record<string, () => Promise<Record<string, unknown>>>;
 }
